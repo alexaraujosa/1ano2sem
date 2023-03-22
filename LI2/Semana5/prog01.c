@@ -83,6 +83,8 @@ int main()
                 printf("CICLO INFERNAL\n");
                 break;
             }
+            else if(resultado[caso][j+1] == 0)
+                printf("%d", resultado[caso][j]);
             else
                 printf("%d ", resultado[caso][j]);
         }
