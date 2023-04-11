@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <math.h>
+
 typedef struct aluno {
     int numero;
     char nome[100];
@@ -47,7 +50,7 @@ void ordenaPorNum(Aluno t [], int N)
     }
 }
 
-
+/*
 void imprimeTurmaInd(int ind[], Aluno t[], int N)
 {
     for(int i=0 ; i<N ; i++)
@@ -56,4 +59,29 @@ void imprimeTurmaInd(int ind[], Aluno t[], int N)
             if(i == ind[j])
                 //imprimeAluno(t + j);  Falta definir a imprimeAluno
     }
+}
+*/
+
+void imprimeTurma(int ind[], Aluno t[], int N)
+{
+    for(int i=0 ; i<N ; i++)
+    {
+        int indT = ind[i];
+        Aluno a = t[indT];
+        printf("%d | %5s | %2d \n", a.numero, a.nome, nota(a));
+    }
+}
+
+void criaIndPorNome(Aluno t [], int N, int ind[])
+{
+    for(int i=0 ; i<N ; i++)
+        ind[i] = i;
+    ordenaPorNome(t, N, ind);
+}
+
+
+
+int main()
+{
+    return 0;
 }
